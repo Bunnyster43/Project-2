@@ -17,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/Bunnyster43/Project-2/issues"
   },
-  "homepage": "https://github.com/Bunnyster43/Project-2#readme"
+  "homepage": "https://github.com/Bunnyster43/Project-2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {}
 }
