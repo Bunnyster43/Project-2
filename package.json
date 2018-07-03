@@ -12,7 +12,7 @@
     "url": "git+https://github.com/Bunnyster43/Project-2.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Isaac, Tom, Tyler",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Bunnyster43/Project-2/issues"
@@ -22,7 +22,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "request": "^2.87.0"
   },
   "devDependencies": {}
 }

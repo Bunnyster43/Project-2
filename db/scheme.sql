@@ -2,17 +2,20 @@ DROP DATABASE red_db;
 
 CREATE DATABASE red_db;
 
+DROP TABLE users;
+
 USE red_db;
 
 CREATE TABLE users (
 	id int NOT NULL AUTO_INCREMENT,
-	users_name varchar(255) NOT NULL,
-	categories_name varchar(255) NOT NULL,
-	questions_question varchar(255) NOT NULL,
-	questions_answer varchar(255) NOT NULL,
-	comments_comments varchar(255) NOT NULL,
-	categories_id varchar(255) NOT NULL, 
+	user_name varchar(255) NOT NULL,
+	category varchar(255) NOT NULL,
+	question varchar(255) NOT NULL,
+	answer varchar(255) NOT NULL,
+	comment varchar(255) NOT NULL,
+	category_id varchar(255) NOT NULL, 
 	question_id varchar(255) NOT NULL,
+	answer_id varchar(255) NOT NULL,
 	author_id varchar(255) NOT NULL,
     owner_id varchar(255) NOT NULL,
     link_id varchar(255) NOT NULL,  
