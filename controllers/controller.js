@@ -4,11 +4,11 @@ var router = express.Router();
 
 var data = require("../models/model.js");
 
-router.get("/user", function (require, result) {
+router.get("/", function (require, result) {
   data.all(function (data) {
     var hbsObject = { data };
     console.log(hbsObject);
-    //result.render("index", hbsObject);
+    result.render("index", hbsObject);
   });
 });
 
