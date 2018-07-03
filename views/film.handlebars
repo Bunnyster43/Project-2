@@ -1,36 +1,55 @@
 <!-- Content -->
-								<section>
-									<header class="main">
-									</header>
+<section>
+	<header class="main">
+	</header>
 
-									<span class="image main"><img src="../../public/assets/images/movies_tv_logo.png" alt="" /></span>
-									<h2>Questions</h2>
-									<ul>
-                                        {{#each questions}}
-                                            {{#if category=filmsAndTv}}
-                                                {{#unless isAnswered}}
-                                                    {{> threads/thread-link}}
-                                                {{/unless}}
-                                            {{/if}}
-                                        {{/each}}
-                                    </ul>
+	<span class="image main">
+		<img src="../../public/assets/images/movies_tv_logo.png" alt="" />
+	</span>
+	<h2>Questions</h2>
+	<ul>
+		{{#each questions}}
+			{{#if category=filmsAndTv}}
+				{{#unless isAnswered}}
+					<li>
+						{{> threads/thread-link isAnswered=false}}
+					</li>
+				{{/unless}}
+			{{/if}}
+		{{/each}}
+	</ul>
 
-									<hr class="major" />
+	<hr class="major" />
 
-									<h2>Submit Your Own</h2>
-									<!-- Break -->
-									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your question here" rows="6"></textarea>
-									</div>
-									<br>
-									<!-- Break -->
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Submit" class="primary" id="film"/></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									<hr class="major" />
+	<h2>Submit Your Own</h2>
+	<!-- Break -->
+	<div class="col-12">
+		<textarea name="demo-message" placeholder="Enter your question here" rows="6"></textarea>
+	</div>
+	<br>
+	<!-- Break -->
+	<div class="col-12">
+		<ul class="actions">
+			<li>
+				<input type="submit" value="Submit" class="primary" category-id="film" />
+			</li>
+			<li>
+				<input type="reset" value="Reset" />
+			</li>
+		</ul>
+	</div>
+		<hr class="major" />
 
-									<h2>Answered Questions</h2>
-									{{}}
-								</section>
+		<h2>Answered Questions</h2>
+		<ul>
+			{{#each questions}}
+				{{#if category=sports}}
+					{{#if isAnswered}}
+					<li>
+						{{> threads/thread-link isAnswered=true}}
+					</li>
+					{{/if}}
+				{{/if}}
+			{{/each}}
+		</ul>
+</section>

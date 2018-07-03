@@ -9,7 +9,9 @@
                                         {{#each questions}}
                                             {{#if category=art}}
                                                 {{#unless isAnswered}}
-                                                    {{> threads/thread-link}}
+                                                    <li>
+														{{> threads/thread-link isAnswered=false}}
+													</li>
                                                 {{/unless}}
                                             {{/if}}
                                         {{/each}}
@@ -20,7 +22,7 @@
 									<h2>Submit Your Own</h2>
 									<!-- Break -->
 									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your question here" rows="6"></textarea>
+										<textarea name="demo-message" placeholder="Enter your question here" rows="6"></textarea>
 									</div>
 									<br>
 									<!-- Break -->
@@ -29,8 +31,19 @@
 											<li><input type="submit" value="Submit" class="primary" /></li>
 											<li><input type="reset" value="Reset" /></li>
 										</ul>
+									</div>
 									<hr class="major" />
 
 									<h2>Answered Questions</h2>
-									{{}}
+									<ul>
+                                        {{#each questions}}
+                                            {{#if category=art}}
+                                                {{#if isAnswered}}
+                                                    <li>
+														{{> threads/thread-link isAnswered=true}}
+													</li>
+                                                {{/if}}
+                                            {{/if}}
+                                        {{/each}}
+                                    </ul>
 								</section>

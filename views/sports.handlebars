@@ -8,7 +8,15 @@
     </span>
     <h2>Questions</h2>
     <ul>
-        {{#each questions}} {{#if category=sports}} {{#unless isAnswered}} {{> threads/thread-link}} {{/unless}} {{/if}} {{/each}}
+        {{#each questions}}
+            {{#if category=sports}} 
+                {{#unless isAnswered}}
+                    <li>
+                        {{> threads/thread-link isAnswered=false}} 
+                    </li>
+                {{/unless}}
+            {{/if}} 
+        {{/each}}
     </ul>
 
     <hr class="major" />
@@ -23,14 +31,25 @@
     <div class="col-12">
         <ul class="actions">
             <li>
-                <input type="submit" value="Submit" class="primary" />
+                <input type="submit" value="Submit" class="primary" category-id="sports" />
             </li>
             <li>
                 <input type="reset" value="Reset" />
             </li>
         </ul>
         <hr class="major" />
+    </div>
 
         <h2>Answered Questions</h2>
-        {{{{#each questions}} {{#if category=sports}} {{#ifs isAnswered}} {{> threads/thread-link}} {{/unless}} {{/if}} {{/each}}}}
+    <ul>
+        {{#each questions}}
+            {{#if category=sports}} 
+                {{#if isAnswered}}
+                    <li>
+                        {{> threads/thread-link isAnswered=true}} 
+                    </li>
+                {{/if}}
+            {{/if}} 
+        {{/each}}
+    </ul>
 </section>

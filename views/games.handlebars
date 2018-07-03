@@ -9,7 +9,7 @@
                                         {{#each questions}}
                                             {{#if category=games}}
                                                 {{#unless isAnswered}}
-                                                    {{> threads/thread-link}}
+                                                    {{> threads/thread-link isAnswered=false}}
                                                 {{/unless}}
                                             {{/if}}
                                         {{/each}}
@@ -20,17 +20,28 @@
 									<h2>Submit Your Own</h2>
 									<!-- Break -->
 									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your question here" rows="6"></textarea>
+										<textarea name="demo-message" placeholder="Enter your question here" rows="6"></textarea>
 									</div>
 									<br>
 									<!-- Break -->
 									<div class="col-12">
 										<ul class="actions">
-											<li><input type="submit" value="Submit" class="primary" /></li>
+											<li><input type="submit" value="Submit" class="primary" category-id="games"/></li>
 											<li><input type="reset" value="Reset" /></li>
 										</ul>
+									</div>
 									<hr class="major" />
 
 									<h2>Answered Questions</h2>
-									{{}}
+										<ul>
+									        {{#each questions}}
+												{{#if category=sports}}
+													{{#if isAnswered}}
+														<li>
+															{{> threads/thread-link isAnswered=true}} 
+														</li>
+													{{/if}}
+												{{/if}}
+											{{/each}}
+										</ul>
 								</section>

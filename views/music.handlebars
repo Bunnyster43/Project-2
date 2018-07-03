@@ -9,8 +9,10 @@
                                         {{#each questions}}
                                             {{#if category=music}}
                                                 {{#unless isAnswered}}
-                                                    {{> threads/thread-link}}
-                                                {{/unless}}
+                                                    <li>
+														{{> threads/thread-link isAnswered=false}}
+													</li>
+												{{/unless}}
                                             {{/if}}
                                         {{/each}}
                                     </ul>
@@ -26,11 +28,22 @@
 									<!-- Break -->
 									<div class="col-12">
 										<ul class="actions">
-											<li><input type="submit" value="Submit" class="primary" /></li>
+											<li><input type="submit" value="Submit" class="primary" category-id="music"/></li>
 											<li><input type="reset" value="Reset" /></li>
 										</ul>
+									</div>
 									<hr class="major" />
 
 									<h2>Answered Questions</h2>
-									{{}}
+									    <ul>    
+											{{#each questions}}
+												{{#if category=sports}}
+													{{#if isAnswered}}
+														<li>
+															{{> threads/thread-link isAnswered=true}} 
+														</li>
+													{{/if}}
+												{{/if}}
+											{{/each}}
+										</ul>
 								</section>
