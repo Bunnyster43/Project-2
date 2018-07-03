@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var sequelize = require("sequelize")
 
 var PORT = process.env.PORT || 8000;
 
@@ -8,8 +9,6 @@ var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("./views/layouts/HTML BAREBONES"));
-
-app.use(express.static("views/images"));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
